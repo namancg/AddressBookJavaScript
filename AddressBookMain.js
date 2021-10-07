@@ -97,14 +97,24 @@ class Contact {
 
 }
 }
+let addressArray = new Array();
 try {
-let contact = new Contact('Naman','Chandra','Basavanagudi','Bangalore','Karnataka','560004','91 9538169967','naman@gmail.com');
-console.log("CONTACT DETAILS");
-console.log(contact);
+addressArray.push(new Contact('Naman','Chandra','Basavanagudi','Bangalore','Karnataka','560004','91 9538169967','naman@gmail.com'));
+console.log(addressArray);
 }
 catch (e)
 {
     console.error(e);
 }
+try 
+{
+    addressArray.push(new Contact('Aashvi','Nagendra','Kathriguppe','Bangalore','Karnataka','560024','91 9880212050','aashvi@gmail.com'));
+    console.log(addressArray);
+    }
+catch (e)
+{
+    console.error(e);
+}
+
 
 
