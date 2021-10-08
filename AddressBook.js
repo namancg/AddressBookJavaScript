@@ -115,6 +115,19 @@ catch (e)
 {
     console.error(e);
 }
+function groupBy(list) {
+    const map = new Map();
+    list.forEach((item) => {
+         const key = item.city;
+         const collection = map.get(key);
+         if (!collection) {
+             map.set(key, [item.firstName]);
+         } else {
+             collection.push(item.firstName);
+         }
+    });
+    return map;
+}
 //addContact
 function addContactToAddressBook(AddressBook, contactToAdd) {
     if(addressArray.some((contact) => { return contact.firstName == contactToAdd.firstName })) {
@@ -186,4 +199,13 @@ let cityToSearch = 'Bangalore';
 
 } catch (e) {
     console.log(e);
+}
+
+//groupby
+try {
+let groupedContacts = groupBy(addressArray);
+console.log("Mappings: ", groupedContacts)
+
+} catch (e) {
+console.log(e);
 }
