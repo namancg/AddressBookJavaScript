@@ -99,16 +99,16 @@ class Contact {
 }
 let addressArray = new Array();
 try {
-addressArray.push(new Contact('Naman','Chandra','Basavanagudi','Bangalore','Karnataka','560004','91 9538169967','naman@gmail.com'));
+  let contact1=  addressArray.push(new Contact('Naman','Chandra','Basavanagudi','Bangalore','Karnataka','560004','91 9538169967','naman@gmail.com'));
 console.log(addressArray);
 }
-catch (e)
+catch (e)   
 {
     console.error(e);
 }
 try 
 {
-    addressArray.push(new Contact('Aashvi','Nagendra','Kathriguppe','Bangalore','Karnataka','560024','91 9880212050','aashvi@gmail.com'));
+   let contact2= addressArray.push(new Contact('Aashvi','Nagendra','Kathriguppe','Bangalore','Karnataka','560024','91 9880212050','aashvi@gmail.com'));
     console.log(addressArray);
     }
 catch (e)
@@ -219,4 +219,13 @@ let groupedContactsByCity = groupBy(addressArray, contact => contact.city);
 
 } catch (e) {
     console.log(e);
+}
+
+//sort entries
+try{
+addressArray.sort((contact1, contact2) => {
+    return contact1.firstName.localeCompare(contact2.firstName)
+}).forEach(contact => console.log(contact))
+} catch (e) {
+console.log(e);
 }
