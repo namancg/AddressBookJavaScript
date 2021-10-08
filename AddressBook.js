@@ -115,6 +115,21 @@ catch (e)
 {
     console.error(e);
 }
+//edit contact
+try{
+let nameToEdit = "Aashvi";
+    let contactToEdit = new Contact('Sanjit','Kangovi','Gopalnagar','Mussorie','Dehradun',700021,'91 7894971230','sanjit@gmail.com');
+    let editedAddressBook = new Array();
+    addressArray.forEach(contact => {
+        if(contact.firstName == nameToEdit) {
+            editedAddressBook.push(contactToEdit);
+        } else {
+            editedAddressBook.push(contact);
+        }
+    });
 
-
+    console.log("EDITED ADDRRESSBOOK: ", editedAddressBook)
+} catch (e) {
+    console.log(e);
+}
 
