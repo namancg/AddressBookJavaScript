@@ -143,3 +143,10 @@ let nameToDelete = "Sanjit";
 } catch (e) {
     console.log(e);
 }
+
+//count number of contacts 
+function getCountOfContacts(count) {
+    count += 1;
+    return count;
+}
+console.log("NUMBER OF CONTACTS: " + addressArray.reduce(getCountOfContacts, 0));
