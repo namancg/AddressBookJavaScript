@@ -164,7 +164,7 @@ console.log("NUMBER OF CONTACTS: " + addressArray.reduce(getCountOfContacts, 0))
 
 //no duplicate contact
 try{
-let contactToAdd = new Contact('Swaroop','Kaushik','Uttrahalli','Pune','Maharashtra',940021,'91 9789436260','swarrop@gmail.com');
+let contactToAdd = new Contact('Aashvi','Nagendra','Kathriguppe','Bangalore','Karnataka','560024','91 9880212050','aashvi@gmail.com');
     addressArray = addContactToAddressBook(addressArray, contactToAdd)
 
     totalContacts = addressArray.reduce((total_Contacts, contact) => {
@@ -173,5 +173,17 @@ let contactToAdd = new Contact('Swaroop','Kaushik','Uttrahalli','Pune','Maharash
     console.log("TOTAL CONTACTS", totalContacts)
 
 } catch (e) {
-    console.log("Error! "+e);
+    console.log(e);
+}
+
+//search contact by city and state
+try{
+let cityToSearch = 'Bangalore';
+    let stateToSearch = 'Karnataka';
+    addressArray.filter(contact => contact.city == cityToSearch)
+                .filter(contact => contact.state == stateToSearch)
+                .forEach(contact => console.log(contact));
+
+} catch (e) {
+    console.log(e);
 }
