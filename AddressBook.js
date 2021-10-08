@@ -209,3 +209,14 @@ console.log("Mappings: ", groupedContacts)
 } catch (e) {
 console.log(e);
 }
+
+//contact count by city/state
+try {
+let groupedContactsByCity = groupBy(addressArray, contact => contact.city);
+    groupedContactsByCity.forEach((value, key) => {
+        console.log(key," => ",value.length);
+    });
+
+} catch (e) {
+    console.log(e);
+}
