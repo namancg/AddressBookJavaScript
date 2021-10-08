@@ -133,3 +133,13 @@ let nameToEdit = "Aashvi";
     console.log(e);
 }
 
+//delete contact
+try{
+let nameToDelete = "Sanjit";
+    let deletedAddressBook = addressArray.filter(function (contact) {
+        return contact.firstName != nameToDelete;
+    });
+    console.log("AFTER DELETING CONTACT", deletedAddressBook)
+} catch (e) {
+    console.log(e);
+}
