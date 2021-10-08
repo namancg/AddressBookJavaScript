@@ -63,7 +63,7 @@ class Contact {
     }
     get zip()
     {
-        return this._zip=zip;
+        return this._zip;
     }
     set zip(zip)
     {
@@ -228,4 +228,24 @@ addressArray.sort((contact1, contact2) => {
 }).forEach(contact => console.log(contact))
 } catch (e) {
 console.log(e);
+}
+
+//sort by state city or zip
+
+try {
+    console.log("SORTED BY CITY");
+    addressArray.sort((contact1, contact2) => {
+        return contact1.city.localeCompare(contact2.city)
+    }).forEach(contact => console.log(contact.toString()))
+    console.log("SORTED BY STATE");
+    addressArray.sort((contact1, contact2) => {
+        return contact1.state.localeCompare(contact2.state)
+    }).forEach(contact => console.log(contact.toString()))
+    console.log("SORTED BY ZIP");
+    addressArray.sort((contact1, contact2) => {
+        return contact1.zip - (contact2.zip)
+    }).forEach(contact => console.log(contact.toString()))
+
+} catch (e) {
+    console.log(e);
 }
