@@ -115,6 +115,17 @@ catch (e)
 {
     console.error(e);
 }
+//addContact
+function addContactToAddressBook(AddressBook, contactToAdd) {
+    if(addressArray.some((contact) => { return contact.firstName == contactToAdd.firstName })) {
+        console.log("Contact already present");
+    }
+    else {
+        addressArray.push(contactToAdd);
+        console.log("CONTACT ADDED");
+    }
+    return AddressBook;
+}
 //edit contact
 try{
 let nameToEdit = "Aashvi";
@@ -150,3 +161,17 @@ function getCountOfContacts(count) {
     return count;
 }
 console.log("NUMBER OF CONTACTS: " + addressArray.reduce(getCountOfContacts, 0));
+
+//no duplicate contact
+try{
+let contactToAdd = new Contact('Swaroop','Kaushik','Uttrahalli','Pune','Maharashtra',940021,'91 9789436260','swarrop@gmail.com');
+    addressArray = addContactToAddressBook(addressArray, contactToAdd)
+
+    totalContacts = addressArray.reduce((total_Contacts, contact) => {
+        return total_Contacts+= 1;
+    }, 0);
+    console.log("TOTAL CONTACTS", totalContacts)
+
+} catch (e) {
+    console.log("Error! "+e);
+}
